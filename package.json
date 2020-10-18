@@ -1,10 +1,10 @@
 {
-  "name": "react-lottie",
+  "name": "@kassellabs/react-lottie",
   "version": "1.2.3",
   "description": "lottie animation view for React",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chenqingspring/react-lottie"
+    "url": "https://github.com/KasselLabs/react-lottie"
   },
   "license": "MIT",
   "scripts": {
