@@ -27,7 +27,17 @@ export default class LottieControlSegment extends React.Component {
       margin: '10px auto',
       textAlign: 'center',
     };
-    const { isStopped, isPaused, direction, speed, isDataA, startFrame, endFrame, startFrame2, endFrame2 } = this.state;
+    const {
+      isStopped,
+      isPaused,
+      direction,
+      speed,
+      isDataA,
+      startFrame,
+      endFrame,
+      startFrame2,
+      endFrame2,
+    } = this.state;
     const defaultOptions = { animationData: (isDataA ? animationDataA : animationDataB) };
 
     return (<div>
@@ -48,7 +58,9 @@ export default class LottieControlSegment extends React.Component {
         type="range" value={speed} min="0" max="3" step="0.5"
         onChange={e => this.setState({ speed: e.currentTarget.value })}
       />
-      <p style={centerStyle}>Segment range: [[{startFrame}, {endFrame}], [{startFrame2}, {endFrame2}]]</p>
+      <p style={centerStyle}>
+        Segment range: [[{startFrame}, {endFrame}], [{startFrame2}, {endFrame2}]]
+      </p>
       <div style={centerStyle}>
         <input
           type="text" value={startFrame}
