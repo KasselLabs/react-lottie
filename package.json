@@ -7,6 +7,7 @@
     "url": "https://github.com/KasselLabs/react-lottie"
   },
   "license": "MIT",
+  "private": false,
   "scripts": {
     "release": "git add package.json && git commit -m 'chore: bump version number' && standard-version --first-release && git push --follow-tags origin master && npm publish",
     "prepublish": ". ./.scripts/prepublish.sh",
