@@ -12,7 +12,7 @@
     "prepublish": ". ./.scripts/prepublish.sh",
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
-    "testonly": "mocha --require .scripts/mocha_runner src/**/tests/**/*.js",
+    "testonly": "mocha --require .scripts/mocha_runner src/**/tests/**/*.js --exit",
     "test": "npm run lint && npm run testonly",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
     "start": "start-storybook -p 9010",
