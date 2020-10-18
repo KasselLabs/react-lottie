@@ -15,7 +15,9 @@ export default class LottieControlSegment extends React.Component {
       direction: 1,
       isDataA: true,
       startFrame: 0,
-      endFrame: 50,
+      endFrame: 60,
+      startFrame2: 30,
+      endFrame2: 60,
     };
   }
 
@@ -25,7 +27,7 @@ export default class LottieControlSegment extends React.Component {
       margin: '10px auto',
       textAlign: 'center',
     };
-    const { isStopped, isPaused, direction, speed, isDataA, startFrame, endFrame } = this.state;
+    const { isStopped, isPaused, direction, speed, isDataA, startFrame, endFrame, startFrame2, endFrame2 } = this.state;
     const defaultOptions = { animationData: (isDataA ? animationDataA : animationDataB) };
 
     return (<div>
@@ -36,7 +38,7 @@ export default class LottieControlSegment extends React.Component {
         isStopped={isStopped}
         isPaused={isPaused}
         speed={speed}
-        segments={[startFrame, endFrame]}
+        segments={[[startFrame, endFrame], [startFrame2, endFrame2]]}
         direction={direction}
       />
 
@@ -46,7 +48,7 @@ export default class LottieControlSegment extends React.Component {
         type="range" value={speed} min="0" max="3" step="0.5"
         onChange={e => this.setState({ speed: e.currentTarget.value })}
       />
-      <p style={centerStyle}>Segment range: [{startFrame}, {endFrame}]</p>
+      <p style={centerStyle}>Segment range: [[{startFrame}, {endFrame}], [{startFrame2}, {endFrame2}]]</p>
       <div style={centerStyle}>
         <input
           type="text" value={startFrame}
@@ -55,6 +57,16 @@ export default class LottieControlSegment extends React.Component {
         <input
           type="text" value={endFrame}
           onChange={e => this.setState({ endFrame: parseInt(e.currentTarget.value, 10) || 0 })}
+        />
+      </div>
+      <div style={centerStyle}>
+        <input
+          type="text" value={startFrame2}
+          onChange={e => this.setState({ startFrame2: parseInt(e.currentTarget.value, 10) || 0 })}
+        />
+        <input
+          type="text" value={endFrame2}
+          onChange={e => this.setState({ endFrame2: parseInt(e.currentTarget.value, 10) || 0 })}
         />
       </div>
     </div>);

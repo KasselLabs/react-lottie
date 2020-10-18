@@ -76,7 +76,7 @@ export default class Lottie extends React.Component {
   }
 
   playSegments() {
-    this.anim.playSegments(this.props.segments);
+    this.anim.playSegments(this.props.segments, true);
   }
 
   stop() {
@@ -176,7 +176,7 @@ Lottie.propTypes = {
   isStopped: PropTypes.bool,
   isPaused: PropTypes.bool,
   speed: PropTypes.number,
-  segments: PropTypes.arrayOf(PropTypes.number),
+  segments:  PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)), PropTypes.arrayOf(PropTypes.number)]),
   direction: PropTypes.number,
   ariaRole: PropTypes.string,
   ariaLabel: PropTypes.string,
