@@ -41,6 +41,9 @@ export default class Lottie extends React.Component {
       this.options = { ...this.options, ...this.props.options };
       this.anim = lottie.loadAnimation(this.options);
       this.registerEvents(this.props.eventListeners);
+      if (this.props.startFrame) {
+        this.anim.goToAndPlay(this.props.startFrame, true);
+      }
     }
 
     if (this.props.isStopped) {
@@ -186,6 +189,7 @@ Lottie.propTypes = {
   isClickToPauseDisabled: PropTypes.bool,
   title: PropTypes.string,
   style: PropTypes.object,
+  startFrame: PropTypes.number,
 };
 
 Lottie.defaultProps = {
